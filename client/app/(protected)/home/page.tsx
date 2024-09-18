@@ -40,9 +40,6 @@ import {
 import SocketContainer from './chat/socket-container'
 import LogoutButton from './logout-button'
 
-export const description =
-  'An AI playground with a sidebar navigation and a main content area. The playground has a header with a settings drawer and a share button. The sidebar has navigation links and a user menu. The main content area shows a form to configure the model and messages.'
-
 export default function Dashboard() {
   return (
     <div className="grid h-screen w-full pl-[56px]">
