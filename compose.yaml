@@ -1,0 +1,23 @@
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    networks:
+      - node-next-network
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+      - '8000:8000'
+    networks:
+      - node-next-network
+
+networks:
+  node-next-network:
+    driver: bridge
