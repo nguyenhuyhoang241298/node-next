@@ -20,10 +20,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
       authorize: async (credentials) => {
         try {
-          const res = await axiosInstance.post('/auth/login', {
-            email: credentials.email,
-            password: credentials.password,
-          })
+          const res = await axiosInstance.post(
+            '/auth/login',
+            {
+              email: credentials.email,
+              password: credentials.password,
+            },
+            {
+              baseURL: process.env.BASE_URL,
+            },
+          )
 
           return res.data.user
         } catch (error) {
